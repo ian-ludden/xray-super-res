@@ -7,7 +7,7 @@ from scipy import ndimage
 
 img_fldr = 'xray_images/'
 
-tst_fldr = 'test_images_64x64/'
+tst_fldr = 'test_images_64x64_denoised/'
 trn_fldr_low = 'train_images_64x64/'
 trn_fldr_high = 'train_images_128x128/'
 trn_out_fldr = 'train_images_output/'
@@ -29,7 +29,8 @@ for index in range(start, end + 1):
 	im = imageio.imread(path_low)
 
 	# Interpolate to 128x128
-	im_interp = ndimage.zoom(im, [2., 2., 1.])
+	# print "im.shape = {0}".format(im.shape)
+	im_interp = ndimage.zoom(im, [2., 2.])
 
 	# Write 128x128 image
 	fname_out = fname_in

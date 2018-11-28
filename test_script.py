@@ -5,7 +5,7 @@ import numpy as np
 
 img_fldr = 'xray_images/'
 
-tst_fldr = 'test_images_64x64/'
+tst_fldr = 'test_images_64x64_denoised/'
 trn_fldr_low = 'train_images_64x64/'
 trn_fldr_high = 'train_images_128x128/'
 trn_out_fldr = 'train_images_output/'
