@@ -7,7 +7,7 @@
 Bilateral Filter -> Very Deep Super-Resolution (VDSR) convolutional network
 
 ## Preprocessing
-We preprocess the low-res images with the bilateralFilter function from the OpenCV (cv2) Python library. We chose the bilateral filter after reading through some of the provided references. The filter parameters (depth = 5, sigma_color = 65.0, sigma_spatial = 15.0) were chosen manually by inspecting the denoised output images for ranges of parameters and visually comparing them to a high-res image down-sized to 64x64. 
+We preprocess the low-res images with the bilateralFilter function from the OpenCV (cv2) Python library. We chose the bilateral filter after reading through some of the provided references. The filter parameters (depth = 5, sigma_color = 45.0, sigma_spatial = 5.0) were chosen manually by inspecting the denoised output images for ranges of parameters and visually comparing them to a high-res image down-sized to 64x64. 
 
 ## CNN Training and Validation
 We then train a VDSR model (heavily based on https://github.com/GeorgeSeif/VDSR-Keras, which implements https://arxiv.org/abs/1511.04587) on the filtered low-res and (unfiltered) high-res training images. We use a 75%/25% train/test split and early stopping on the validation loss to avoid overfitting. 
